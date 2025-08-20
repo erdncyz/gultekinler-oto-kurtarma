@@ -419,3 +419,29 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// Gallery toggle functionality for mobile
+function toggleGallery() {
+    const galleryGrid = document.getElementById('galleryGrid');
+    const toggleBtn = document.querySelector('.gallery-toggle-btn');
+    const toggleText = document.querySelector('.toggle-text');
+    const toggleIcon = document.querySelector('.toggle-icon');
+    
+    if (galleryGrid.classList.contains('active')) {
+        // Close gallery
+        galleryGrid.classList.remove('active');
+        toggleText.textContent = 'Galeriyi Aç';
+        toggleBtn.classList.remove('active');
+        
+        // Smooth scroll to top of gallery section
+        document.getElementById('gallery').scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    } else {
+        // Open gallery
+        galleryGrid.classList.add('active');
+        toggleText.textContent = 'Galeriyi Kapat';
+        toggleBtn.classList.add('active');
+    }
+}

@@ -187,7 +187,17 @@
                 <h2 class="section-title">Galeri</h2>
                 <p class="section-subtitle">Hizmetlerimizden kareler</p>
             </div>
-            <div class="gallery-grid">
+            <div class="gallery-toggle-mobile">
+                <div class="gallery-description-mobile">
+                    <p>İşlerimizin fotoğrafları için galeriye göz atın</p>
+                    <p class="instagram-note">Ayrıca Instagram'dan da ulaşabilirsiniz</p>
+                </div>
+                <button class="gallery-toggle-btn" onclick="toggleGallery()">
+                    <span class="toggle-text">Galeriyi Aç</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
                 <div class="gallery-item" onclick="openLightbox(1)">
                     <img src="1.jpeg" alt="Gültekinler Oto Kurtarma - Hizmet 1" loading="lazy">
                     <div class="gallery-overlay">
