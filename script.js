@@ -366,12 +366,20 @@ console.log('Gültekinler Oto Kurtarma - Modern ve lüks web sitesi yüklendi! �
 let currentImageIndex = 1;
 const totalImages = 20;
 
+// Map image indices to actual file names (6.jpeg to 20.jpeg)
+const imageFileMap = {
+    1: '6.jpeg', 2: '7.jpeg', 3: '8.jpeg', 4: '9.jpeg', 5: '10.jpeg',
+    6: '11.jpeg', 7: '12.jpeg', 8: '13.jpeg', 9: '14.jpeg', 10: '15.jpeg',
+    11: '16.jpeg', 12: '17.jpeg', 13: '18.jpeg', 14: '19.jpeg', 15: '20.jpeg',
+    16: '6.jpeg', 17: '7.jpeg', 18: '8.jpeg', 19: '9.jpeg', 20: '10.jpeg'
+};
+
 function openLightbox(imageIndex) {
     currentImageIndex = imageIndex;
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     
-    lightboxImg.src = `${imageIndex}.jpeg`;
+    lightboxImg.src = imageFileMap[imageIndex] || `${imageIndex}.jpeg`;
     lightbox.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
@@ -392,7 +400,7 @@ function changeImage(direction) {
     }
     
     const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = `${currentImageIndex}.jpeg`;
+    lightboxImg.src = imageFileMap[currentImageIndex] || `${currentImageIndex}.jpeg`;
 }
 
 // Close lightbox when clicking outside the image
